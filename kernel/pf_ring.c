@@ -128,7 +128,11 @@
 
 #define I82599_HW_FILTERING_SUPPORT
 
+#ifdef __KERNEL__
+#include "pf_ring.h"
+#else
 #include "linux/pf_ring.h"
+#endif
 
 #ifndef GIT_REV
 #define GIT_REV "unknown"
